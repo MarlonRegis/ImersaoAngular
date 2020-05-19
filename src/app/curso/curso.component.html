@@ -20,6 +20,7 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Codigo</th>
                             <th>Nome</th>
                             <th>Carga Horaria</th>
@@ -30,10 +31,11 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let curso of listacurso">
-                            <td>{{curso.codigo}}</td>
+                            <th><input type="radio" name="selecionado" (change)=selecionar(curso)></th>
+                            <th>{{curso.codigo}}</th>
                             <td>{{curso.nome}}</td>
                             <td>{{curso.cargaHoraria}}</td>
-                            <td>{{curso.dataInicio}}</td>
+                            <td>{{curso.dataInicio | date: 'dd/MM/yyyy'}}</td>
                             <td>{{curso.instrutor}}</td>
                             <td>{{curso.local}}</td>
                         </tr>
@@ -44,7 +46,9 @@
 
         <div class="row" style="margin-bottom: 20px;">
             <div class="col-12">
-                <button type="button" class="btn btn-primary" (click)="incluir()">Incluir</button>
+                <button type="button" class="btn btn-primary" style="margin-right: 15px" (click)="incluir()">Incluir</button>
+                <button type="button" class="btn btn-primary" style="margin-right: 15px;" (click)="alterar()">Alterar</button>
+                <button type="button" class="btn btn-primary" style="margin-right: 15px;" (click)="excluir()">Excluir</button>
             </div>
         </div>
 

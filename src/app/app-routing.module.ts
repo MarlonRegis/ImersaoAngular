@@ -1,3 +1,5 @@
+import { AlunomanterComponent } from './aluno/alunomanter/alunomanter.component';
+import { AlunoComponent } from './aluno/aluno.component';
 import { CursoComponent } from './curso/curso.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -20,8 +22,27 @@ const routes: Routes = [
     path:'curso/incluir',
     component: CursomanterComponent,
     pathMatch: 'full'
+  },
+  {
+    path:'curso/alterar/:nome',
+    component: CursomanterComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'aluno',
+    component: AlunoComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'aluno/incluir',
+    component: AlunomanterComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'aluno/alterar/:nome',
+    component: AlunomanterComponent,
+    pathMatch: 'full'
   }
-
 ];
 
 @NgModule({

@@ -12,7 +12,8 @@ import { CursoComponent } from './curso/curso.component';
 import { MatriculaComponent } from './matricula/matricula.component';
 import { CursomanterComponent } from './curso/cursomanter/cursomanter.component';
 
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { AlunomanterComponent } from './aluno/alunomanter/alunomanter.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HttpClientModule} from '@angular/common/http'
     AlunoComponent,
     CursoComponent,
     MatriculaComponent,
-    CursomanterComponent
+    CursomanterComponent,
+    AlunomanterComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import {Curso} from './servico/curso';
 export class CursoComponent implements OnInit {
   listacurso: Curso[] = []
   nome : string = '';
+  selecionado: Curso;
 
   pesquisar(){
     this.CursoServicoService.pesquisar(this.nome).subscribe(
@@ -24,6 +25,19 @@ export class CursoComponent implements OnInit {
     this.router.navigate(['curso/incluir'])
   }
 
+  selecionar(curso: Curso){
+    this.selecionado = curso
+  }
+
+  alterar(){
+    this.router.navigate(['curso/alterar/' + this.selecionado.nome])
+  }
+
+  excluir(){
+    this.CursoServicoService.remover(this.selecionado).subscribe(date=> {
+      alert(date['mensagem'])
+    })
+  }
 
   constructor(private router: Router ,
     private CursoServicoService: CursoServicoService) { }
